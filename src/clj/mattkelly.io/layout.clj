@@ -1,4 +1,4 @@
-(ns clojure-getting-started.layout
+(ns mattkelly-io.layout
   (:require
    [clojure.java.io]
    [selmer.parser :as parser]

@@ -1,4 +1,4 @@
-(ns clojure-getting-started.config
+(ns mattkelly-io.config
   (:require
    [cprop.core :refer [load-config]]
    [cprop.source :as source]

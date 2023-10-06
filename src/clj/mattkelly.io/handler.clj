@@ -1,11 +1,11 @@
-(ns clojure-getting-started.handler
+(ns mattkelly-io.handler
   (:require
-   [clojure-getting-started.middleware :as middleware]
-   [clojure-getting-started.layout :refer [error-page]]
-   [clojure-getting-started.routes :refer [routes]]
+   [mattkelly-io.middleware :as middleware]
+   [mattkelly-io.layout :refer [error-page]]
+   [mattkelly-io.routes :refer [routes]]
    [reitit.ring :as ring]
    [ring.middleware.content-type :refer [wrap-content-type]]
-   [clojure-getting-started.env :refer [defaults]]
+   [mattkelly-io.env :refer [defaults]]
    [mount.core :as mount]))
 
 (mount/defstate init-app

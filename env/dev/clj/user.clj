@@ -1,13 +1,13 @@
 (ns user
   "Userspace functions you can run by default in your local REPL."
   (:require
-   [clojure-getting-started.config :refer [env]]
+   [mattkelly-io.config :refer [env]]
    [clojure.pprint]
    [clojure.spec.alpha :as s]
    [expound.alpha :as expound]
    [mount.core :as mount]
-   [clojure-getting-started.core :refer [start-app]]
-   [clojure-getting-started.db.core]
+   [mattkelly-io.core :refer [start-app]]
+   [mattkelly-io.db.core]
    [conman.core :as conman]
    [luminus-migrations.core :as migrations]))
 
@@ -35,10 +35,10 @@
 (defn restart-db
   "Restarts database."
   []
-  (mount/stop #'clojure-getting-started.db.core/*db*)
-  (mount/start #'clojure-getting-started.db.core/*db*)
-  (binding [*ns* (the-ns 'clojure-getting-started.db.core)]
-    (conman/bind-connection clojure-getting-started.db.core/*db* "sql/queries.sql")))
+  (mount/stop #'mattkelly-io.db.core/*db*)
+  (mount/start #'mattkelly-io.db.core/*db*)
+  (binding [*ns* (the-ns 'mattkelly-io.db.core)]
+    (conman/bind-connection mattkelly-io.db.core/*db* "sql/queries.sql")))
 
 (defn reset-db
   "Resets database."

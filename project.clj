@@ -1,4 +1,4 @@
-(defproject clojure-getting-started "0.1.0-SNAPSHOT"
+(defproject mattkelly-io "0.0.42"
 
   :dependencies [[ch.qos.logback/logback-classic "1.4.4"]
                  [cheshire "5.11.0"]
@@ -26,25 +26,25 @@
                  [selmer "1.12.55"]]
 
   :min-lein-version "2.0.0"
-  
+
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
   :resource-paths ["resources"]
   :target-path "target/%s/"
-  :main ^:skip-aot clojure-getting-started.core
+  :main ^:skip-aot mattkelly-io.core
 
   :plugins [[lein-cljfmt "0.9.2"]]
 
   :profiles
   {:uberjar {:omit-source true
              :aot :all
-             :uberjar-name "clojure-getting-started.jar"
-             :source-paths ["env/prod/clj" ]
+             :uberjar-name "mattkelly-io.jar"
+             :source-paths ["env/prod/clj"]
              :resource-paths ["env/prod/resources"]}
 
    :dev           [:project/dev :profiles/dev]
 
-   :project/dev  {:jvm-opts ["-Dconf=dev-config.edn" ]
+   :project/dev  {:jvm-opts ["-Dconf=dev-config.edn"]
                   :dependencies [[org.clojure/tools.namespace "1.3.0"]
                                  [pjstadig/humane-test-output "0.11.0"]
                                  [prone "2021-04-23"]
@@ -52,9 +52,9 @@
                                  [ring/ring-mock "0.4.0"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.24.1"]
                                  [jonase/eastwood "1.2.4"]
-                                 [cider/cider-nrepl "0.26.0"]] 
-                  
-                  :source-paths ["env/dev/clj" ]
+                                 [cider/cider-nrepl "0.26.0"]]
+
+                  :source-paths ["env/dev/clj"]
                   :resource-paths ["env/dev/resources"]
                   :repl-options {:init-ns user
                                  :timeout 120000}

@@ -1,9 +1,9 @@
-(ns clojure-getting-started.core
+(ns mattkelly-io.core
   (:require
-   [clojure-getting-started.handler :as handler]
+   [mattkelly-io.handler :as handler]
    [luminus.http-server :as http]
    [luminus-migrations.core :as migrations]
-   [clojure-getting-started.config :refer [env]]
+   [mattkelly-io.config :refer [env]]
    [clojure.tools.cli :refer [parse-opts]]
    [clojure.tools.logging :as log]
    [mount.core :as mount])
@@ -48,5 +48,5 @@
 (defn -main [& args]
   (-> args
       (parse-opts cli-options)
-      (mount/start-with-args #'clojure-getting-started.config/env))
+      (mount/start-with-args #'mattkelly-io.config/env))
   (start-app args))

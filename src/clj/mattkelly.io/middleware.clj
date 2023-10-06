@@ -1,12 +1,12 @@
-(ns clojure-getting-started.middleware
+(ns mattkelly-io.middleware
   (:require
-   [clojure-getting-started.env :refer [defaults]]
+   [mattkelly-io.env :refer [defaults]]
    [clojure.tools.logging :as log]
-   [clojure-getting-started.layout :refer [error-page]]
+   [mattkelly-io.layout :refer [error-page]]
    [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
-   [clojure-getting-started.middleware.formats :as formats]
+   [mattkelly-io.middleware.formats :as formats]
    [muuntaja.middleware :refer [wrap-format wrap-params]]
-   [clojure-getting-started.config :refer [env]]
+   [mattkelly-io.config :refer [env]]
    [ring.middleware.flash :refer [wrap-flash]]
    [ring.adapter.undertow.middleware.session :refer [wrap-session]]
    [ring.middleware.defaults :refer [site-defaults wrap-defaults]]))
@@ -53,5 +53,3 @@
            (assoc-in [:security :anti-forgery] false)
            (dissoc :session)))
       wrap-internal-error))
-
-

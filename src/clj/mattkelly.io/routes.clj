@@ -1,13 +1,12 @@
-(ns clojure-getting-started.routes
+(ns mattkelly-io.routes
   (:require
-   [clojure-getting-started.layout :as layout]
-   [clojure-getting-started.db.core :as db]
+   [mattkelly-io.layout :as layout]
+   [mattkelly-io.db.core :as db]
    [clojure.java.io :as io]
-   [clojure-getting-started.middleware :as middleware]
+   [mattkelly-io.middleware :as middleware]
    [ring.util.response]
    [clojure.java.jdbc :as jdbc]
-   [ring.util.http-response :as response])
-  )
+   [ring.util.http-response :as response]))
 
 (defn home [request]
   (layout/render request "home.html"))
