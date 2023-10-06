@@ -1,5 +1,5 @@
 {
-  "name": "Start on Heroku: Clojure",
-  "description": "A barebones Clojure app, which can easily be deployed to Heroku.",
+  "name": "Start on Dokku: Clojure",
+  "description": "A barebones Clojure app, which can easily be deployed to Dokku.",
   "addons": ["heroku-postgresql"]
 }
